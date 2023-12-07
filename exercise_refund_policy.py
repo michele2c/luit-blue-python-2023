@@ -25,5 +25,5 @@ is_broken = input('Has the item broken down on its own [y/n]? ')
 if (is_broken == 'y' or (purchased_days <= 10 and is_used == 'n')):
     print('You can get a refund.')
 else:
-    print('You cannot get a refund.')
+    print('Sorry! You cannot get a refund.')
 
