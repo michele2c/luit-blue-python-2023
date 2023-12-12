@@ -21,21 +21,31 @@ Project - EC2 Random Name Generator
 # marketing-e7b1682894434ec5890312c7c403c011
 
 import random
+import string
 
 department_name = str(input("Department: "))
 number_instances = int(input("Number of instances: "))
 
-counter = 1
+# initialize an empty list
 instances_list = []
+# initialize while loop counter
+counter = 1
+
 while counter <= number_instances:
-    number = random.randint(100, 10000000)
-    instances = department_name.lower() + '_' + str(number)
+    # initializing size of string
+    string_size = 32
+    # use random.choices() to randomly choose characters and numbers
+    # ''.join() to join the list of characters
+    random_name = ''.join(random.choices(string.ascii_lowercase + string.digits, k=string_size))
+    # store department name in lowercase + random string
+    instances = department_name.lower() + "-" + random_name
+    # append result to the list
     instances_list.append(instances)
  
     counter += 1 #increment by 1
 
 
-print(instances_list)
+print('This is your list:', instances_list)
 
 
 
@@ -54,3 +64,4 @@ print(instances_list)
 
 # print("".join([first_name, last_name]))
 # # JohnDoe
+
