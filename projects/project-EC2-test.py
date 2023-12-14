@@ -23,6 +23,8 @@ Project - EC2 Random Name Generator
 import random
 import string
 
+# using while loop
+
 department_name = str(input("Department: "))
 number_instances = int(input("Number of instances: "))
 
@@ -31,23 +33,43 @@ instances_list = []
 # initialize while loop counter
 counter = 1
 
-while counter <= number_instances:
-    # initializing size of string
-    string_size = 32
-    # use random.choices() to randomly choose characters and numbers
-    # ''.join() to join the list of characters
-    random_name = ''.join(random.choices(string.ascii_lowercase + string.digits, k=string_size))
-    # store department name in lowercase + random string
-    instances = department_name.lower() + "-" + random_name
-    # append result to the list
-    instances_list.append(instances)
+# while counter <= number_instances:
+#     # initializing size of string
+#     string_size = 32
+#     # use random.choices() to randomly choose characters and numbers
+#     # ''.join() to join the list of characters
+#     random_name = ''.join(random.choices(string.ascii_lowercase + string.digits, k=string_size))
+#     # store department name in lowercase + random string
+#     instances = department_name.lower() + "-" + random_name
+#     # append result to the list
+#     instances_list.append(instances)
  
-    counter += 1 #increment by 1
+#     counter += 1 #increment by 1
 
 
-print('This is your list:', instances_list)
+# print('This is your list:', instances_list)
 
+# using for loop
+num_instances = int(input("Number of instances: "))
+dep_name = str(input("Department name: "))
 
+# validate department name
+if dep_name.lower() == "marketing" or dep_name.lower() == "accounting" or dep_name.lower() == "finops":
+  # initialize list
+    instances_list = []
+    for x in range(num_instances):
+      x += 1
+      # define the lenght of the string
+      str_size = 15
+      # random part of the instance name
+      random_name = ''.join(random.choices(string.hexdigits, k=str_size))
+      # combine department and random name
+      instance_name = dep_name.lower() + "-" + random_name.lower()
+      # append names to the list
+      instances_list.append(instance_name)
+    print(instances_list)
+else:
+    print("Sorry! Your department cannot use this tool.")
 
 
 # print(department_name, number, sep='_')
