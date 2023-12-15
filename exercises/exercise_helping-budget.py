@@ -17,10 +17,10 @@ spendings = [1346.0, 987.50, 1734.40, 2567.0, 3271.45, 2500.0, 2130.0, 2510.30, 
 spendings_low = 0
 spendings_normal = 0
 spendings_high = 0
-for i in spendings:
-    if i < 1000.0:
+for month in spendings:
+    if month < 1000.0:
         spendings_low += 1
-    elif i >= 1000.0 and i <= 2500.0:
+    elif month <= 2500.0:
         spendings_normal += 1
     else:
         spendings_high += 1
