@@ -18,12 +18,13 @@ spendings_low = 0
 spendings_normal = 0
 spendings_high = 0
 for i in spendings:
-    print(i)
     if i < 1000.0:
         spendings_low += 1
-    # (between 1000.0 and 2500.0 inclusive
+    elif i >= 1000.0 and i <= 2500.0:
+        spendings_normal += 1
+    else:
+        spendings_high += 1
+
+
         
-print(spendings_low)
-
-
-# Numbers of months with low spendings: {}, normal spendings: {}, high spendings: {}. 
+print(f'Numbers of months with low spendings: {spendings_low}, normal spendings: {spendings_normal}, high spendings: {spendings_high}.')
