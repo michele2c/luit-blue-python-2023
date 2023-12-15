@@ -21,6 +21,7 @@ for i in spendings:
     print(i)
     if i < 1000.0:
         spendings_low += 1
+    # (between 1000.0 and 2500.0 inclusive
         
 print(spendings_low)
 
