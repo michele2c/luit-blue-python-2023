@@ -9,4 +9,3 @@ print(fruits) # sort alphabetically
 fruits = ['apple','orange','kiwi','banana','lemon']
 print(sorted(fruits))
 print(fruits)
-
